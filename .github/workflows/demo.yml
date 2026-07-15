@@ -1,6 +1,7 @@
 # Name of the workflow
 name: Hello World 
-on: workflow_dispatch:   # It's manual trigger workflow_dispatch
+on: 
+    workflow_dispatch:   # It's manual trigger workflow_dispatch
 
 jobs:
     myjob:   # Unique ID name of job
