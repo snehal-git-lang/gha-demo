@@ -4,7 +4,7 @@ on: workflow_dispatch:   # It's manual trigger workflow_dispatch
 
 jobs:
     myjob:   # Unique ID name of job
-    name: Greet  # Display name for this job in Github UI
+        name: Greet  # Display name for this job in Github UI
         runs-on: ubuntu-latest  # specifies the virtual machine
         steps:
             - name: Hello Step
