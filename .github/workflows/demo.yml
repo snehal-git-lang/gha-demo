@@ -1,10 +1,10 @@
 # Name of the workflow
 name: Hello World 
-on  : workflow_dispatch   # It's manual trigger workflow_dispatch
+on: workflow_dispatch:   # It's manual trigger workflow_dispatch
 
 jobs:
-    myjob:   #uniqueid name of job
-    name: Greet  #Display name for this job in Github UI
+    myjob:   # Unique ID name of job
+    name: Greet  # Display name for this job in Github UI
         runs-on: ubuntu-latest  # specifies the virtual machine
         steps:
             - name: Hello Step
