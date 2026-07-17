@@ -1,0 +1,23 @@
+name:  Multi Job # Worflow name
+on:    
+      workflow_dispatch:  # Worfklow will get because of manual trigger
+jobs:
+    job-1-build: # Unique job id
+      runs-on: ubuntu-latest
+      steps:
+            - name: Build
+            run: echo "Build job successfully executed!'
+
+    job-2-test: # Unique job id
+      runs-on: ubuntu-latest
+      steps:
+            - name: Test 
+            run: echo "Test job successfully executed!'
+
+    job-3-deploy: # Unique job id
+      runs-on: ubuntu-latest
+      steps:
+            - name: Deploy
+            run: echo "Deploy job successfully executed!'
+
+      
