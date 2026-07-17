@@ -1,38 +1,34 @@
 # Workflow name
 name: Shell Operators
 on:    
-    workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
-    shell-mastery: # umique jobid
-        name: Learning Shell Operators # Display name on github UI
-        runs-on: ubuntu-latest
-        steps:
+  shell-mastery: # unique jobid
+    name: Learning Shell Operators # Display name on github UI
+    runs-on: ubuntu-latest
+    steps:
 
-                yaml-pipe-step:
-                    name: Multi-line Script ( | - pipe)
-                    run: |
-                        echo "Good Morning!"
-                        echo "New day, new sunshine.."
-                        echo "Consistency is the key"
+      - id: yaml-pipe-step
+        name: Multi-line Script ( | - pipe)
+        run: |
+          echo "Good Morning!"
+          echo "New day, new sunshine.."
+          echo "Consistency is the key"
 
-                 yaml-folded-step:
-                     name: Multi Lines into a single line
-                     run: >
-                         echo "Jack of all trades master of none, 
-                         but oftentimes better than master of one"
+      - id: yaml-folded-step
+        name: Multi Lines into a single line
+        run: >
+          echo "Jack of all trades master of none, 
+          but oftentimes better than master of one"
 
-                 yaml-logical-and:
-                     name: Conditional chain
-                     run: echo "Checking server connection..." && echo "Success! Server is online"
+      - id: yaml-logical-and
+        name: Conditional chain
+        run: echo "Checking server connection..." && echo "Success! Server is online"
 
-                 background-step:
-                     name: Background Job & Piping (Bonus Combo)
-                     run: |
-                         (sleep 2 && echo "Delayed background message by 2s") & 
-                          echo "hello world from standard pipe" | tr '[:lower:]' '[:upper]'
-                          sleep3
-
-
-
-                
+      - id: background-step
+        name: Background Job & Piping (Bonus Combo)
+        run: |
+          (sleep 2 && echo "Delayed background message by 2s") & 
+          echo "hello world from standard pipe" | tr '[:lower:]' '[:upper:]'
+          sleep 3
