@@ -7,7 +7,7 @@ jobs:
     shell-mastery: # umique jobid
         name: Learning Shell Operators # Display name on github UI
         runs-on: ubuntu-latest
-            steps:
+        steps:
 
                 yaml-pipe-step:
                     name: Multi-line Script ( | - pipe)
