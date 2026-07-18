@@ -1,0 +1,35 @@
+name: Dependent Jobs    # Workflow name
+on: 
+    workflow_dispatch
+
+jobs:
+
+    job-1-test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Build
+              run: echo "successfully completed job-1-test"
+
+    job-2-test:
+        runs-on: ubuntu-latest
+        needs: job-1-test   # single job dependency
+        steps:
+            - name: Test
+              run: echo "successfully completed job-2-test" 
+
+    job-3-test:
+        runs-on: ubuntu-latest
+        needs: [job-1-test, job-2-test]  # multiple job dependencies
+        steps:
+            - name: Deploy1
+              run: echo "successfully completed job-3-test"
+
+    job-4-test:
+        runs-on: ubuntu-latest
+        needs:  # multiple list job dependencies
+            - job-1-test
+            - job-2-test
+            - job-3-test
+        steps:
+            - name: Deploy2
+              run: echo "successfully completed job-4-test"
